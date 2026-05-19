@@ -173,9 +173,10 @@ ORDER BY avg_price_sqft ASC;
 
 ---
 
-## 📸 Dashboard Screenshots
+## 🔗 [Ahmedabad Real Estate 2026 Dashboard](https://app.powerbi.com/links/G-WmxO8BbD?ctid=c30f7e5d-d78c-44b6-be17-02d4b3e5cd5c&pbi_source=linkShare)
 
-(🔗 [Microsoft BI Dashboard](https://app.powerbi.com/links/G-WmxO8BbD?ctid=c30f7e5d-d78c-44b6-be17-02d4b3e5cd5c&pbi_source=linkShare))
+---
+## 📸 Dashboard Screenshots
 
 ### Page 1 — City Overview
 <img width="838" height="474" alt="Screenshot 2026-05-19 at 10 06 50" src="https://github.com/user-attachments/assets/5cd45512-2e78-4fab-ada3-9bfffa6ccd68" />
