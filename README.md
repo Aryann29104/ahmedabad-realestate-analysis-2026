@@ -8,7 +8,7 @@
 
 Most real estate "analysis" projects use old Kaggle datasets. This one doesn't.
 
-I scraped **live listings directly from MagicBricks** using Python, cleaned and stored the data in MySQL, ran SQL queries to extract business insights, and built an interactive 3-page Power BI dashboard covering the full end to end data analyst workflow.
+I scraped **live listings directly from MagicBricks** using Python, cleaned and stored the data in MySQL, ran SQL queries to extract business insights, and built an interactive 3 page Power BI dashboard covering the full end to end data analyst workflow.
 
 **Localities covered:**
 1. Prahlad Nagar
