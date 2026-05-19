@@ -1,6 +1,6 @@
 # 🏠 Ahmedabad Real Estate Analysis 2026
 
-> Scraped, analysed, and visualised 1,105 live property listings across 10 Ahmedabad localities to answer one question: **where should you buy a flat in Ahmedabad in 2026?**
+> Scraped, analysed, and visualised 1,105 live property listings across 10 Ahmedabad Diverse localities to answer one question: **where should you buy a flat in Ahmedabad in 2026?**
 
 ---
 
@@ -21,6 +21,10 @@ I scraped **live listings directly from MagicBricks** using Python, cleaned and 
 8. Nikol
 9. Khodiyar Nagar
 10. Science City
+
+<img width="1408" height="768" alt="Gemini_Generated_Image_fbgos3fbgos3fbgo" src="https://github.com/user-attachments/assets/05842fec-db35-4062-a838-42bba19ae734" />
+
+
 ---
 
 ## 🛠️ Tools & Technologies
@@ -206,7 +210,7 @@ ORDER BY avg_price_sqft ASC;
 
 **1. Clone the repo**
 ```bash
-git clone https://github.com/YOUR_USERNAME/ahmedabad-realestate-analysis.git
+git clone https://github.com/Aryann29104/ahmedabad-realestate-analysis-2026.git
 ```
 
 **2. Install dependencies**
@@ -225,14 +229,16 @@ jupyter notebook ahmedabad_realestate.ipynb
 - Cell 8–9: Cleaning and analysis
 - Cell 10: SQL queries
 
+> **Note:** To skip scraping, use the provided `ahmedabad_clean.csv` 
+> directly and start from Cell 8 onwards.
 ---
 
 ## 👤 Author
 
 **Aryansinh Chauhan**
-Data Analyst - Ahmedabad, Gujarat
+Aspiring Data Analyst - Ahmedabad, Gujarat
 📧 chauhan.aryansinh29@gmail.com
-🔗 [LinkedIn](https://www.linkedin.com/in/aryansinh-chauhan-653105283?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3By16xx7BrT7yy2%2F4vApoJEw%3D%3D)
+🔗 [LinkedIn](🔗 [LinkedIn](https://www.linkedin.com/in/aryansinh-chauhan-653105283))
 
 ---
 
