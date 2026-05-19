@@ -1,10 +1,10 @@
-# 🏠 Ahmedabad Real Estate Analysis 2026
+# Ahmedabad Real Estate Analysis 2026
 
 > Scraped, analysed, and visualised 1,105 live property listings across 10 Ahmedabad Diverse localities to answer one question: **where should you buy a flat in Ahmedabad in 2026?**
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 Most real estate "analysis" projects use old Kaggle datasets. This one doesn't.
 
@@ -27,7 +27,7 @@ I scraped **live listings directly from MagicBricks** using Python, cleaned and 
 
 ---
 
-## 🛠️ Tools & Technologies
+## Tools & Technologies
 
 | Layer | Tool |
 |---|---|
@@ -40,7 +40,7 @@ I scraped **live listings directly from MagicBricks** using Python, cleaned and 
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ahmedabad-realestate-analysis/
@@ -56,7 +56,7 @@ ahmedabad-realestate-analysis/
 
 ---
 
-## 🔄 Project Workflow
+## Project Workflow
 
 ```
 MagicBricks Website
@@ -78,11 +78,11 @@ Power BI Dashboard (3 pages)
 
 ---
 
-## 📊 SQL Analysis
+## SQL Analysis
 
 ---
 
-# 🏙️ Query 1 — Best Value Locality (Cheapest → Costliest)
+# Query 1 — Best Value Locality (Cheapest → Costliest)
 
 ```sql
 SELECT locality,
@@ -92,7 +92,7 @@ GROUP BY locality
 ORDER BY avg_price_sqft ASC;
 ```
 
-### 📌 Result
+### Result
 
 | Rank | Locality       | Avg ₹/Sqft |
 | ---: | -------------- | ---------: |
@@ -107,7 +107,7 @@ ORDER BY avg_price_sqft ASC;
 |    9 | Thaltej        |     ₹7,993 |
 |   10 | Satellite      |     ₹8,603 |
 
-### 🔍 Insight
+### Insight
 
 * **Satellite** is the most premium locality in the dataset.
 * It is approximately **81% more expensive per sqft** than Nikol.
@@ -115,7 +115,7 @@ ORDER BY avg_price_sqft ASC;
 
 ---
 
-# 📈 Query 2 — Market Activity (Most → Least Listings)
+# Query 2 — Market Activity (Most → Least Listings)
 
 ```sql
 SELECT locality,
@@ -125,7 +125,7 @@ GROUP BY locality
 ORDER BY listing_count DESC;
 ```
 
-### 📌 Result
+### Result
 
 | Rank | Locality       | Listing Count |
 | ---: | -------------- | ------------: |
@@ -140,7 +140,7 @@ ORDER BY listing_count DESC;
 |    9 | Nikol          |           374 |
 |   10 | Khodiyar Nagar |            90 |
 
-### 🔍 Insight
+### Insight
 
 * **Bopal** is the most active and liquid real estate market.
 * With **734 listings**, it is:
@@ -154,7 +154,7 @@ ORDER BY listing_count DESC;
 
 ---
 
-# 🏠 Query 3 — Dominant BHK Type per Locality
+# Query 3 — Dominant BHK Type per Locality
 
 ```sql
 SELECT locality,
@@ -165,7 +165,7 @@ GROUP BY locality, bhk
 ORDER BY locality, count DESC;
 ```
 
-### 📌 Result
+### Result
 
 | Locality       | Dominant BHK | Listing Count |
 | -------------- | ------------ | ------------: |
@@ -180,7 +180,7 @@ ORDER BY locality, count DESC;
 | Science City   | 3BHK         |           295 |
 | Thaltej        | 4BHK         |           374 |
 
-### 🔍 Insight
+### Insight
 
 * **Thaltej** is heavily dominated by **4BHK luxury housing**.
 * Most premium localities show a strong preference for **3BHK configurations**.
@@ -192,7 +192,7 @@ ORDER BY locality, count DESC;
 
 ---
 
-# 💰 Query 4 — Best 3BHK Flats Under ₹80 Lakh
+# Query 4 — Best 3BHK Flats Under ₹80 Lakh
 
 ```sql
 SELECT locality,
@@ -206,7 +206,7 @@ GROUP BY locality
 ORDER BY avg_price_sqft ASC;
 ```
 
-### 📌 Result
+### Result
 
 | Rank | Locality       | Avg Price/Sqft (₹) | Avg Area (Sqft) | Avg Price (₹ Lakh) | Listings Available |
 | ---: | -------------- | -----------------: | --------------: | -----------------: | -----------------: |
@@ -220,7 +220,7 @@ ORDER BY avg_price_sqft ASC;
 |    8 | Nikol          |              6,125 |           1,302 |               69.9 |                 54 |
 |    9 | Naranpura      |              7,276 |             878 |               77.8 |                 20 |
 
-### 🔍 Insight
+### Insight
 
 * **SBR (Sindhu Bhavan Road)** offers the best overall value for 3BHK flats under ₹80L:
 
@@ -238,33 +238,33 @@ ORDER BY avg_price_sqft ASC;
 
 ---
 
-# 💡 Key Insights
+# Key Insights
 
-### 📍 Insight 1 — Price Gap
+### Insight 1 — Price Gap
 
 > Satellite is **80.8% more expensive** per sqft than Nikol — the widest pricing gap across all 10 localities analysed.
 
 ---
 
-### 📍 Insight 2 — Best Affordable Market
+### Insight 2 — Best Affordable Market
 
 > Nikol offers properties at **₹4,758/sqft**, making it approximately **45% cheaper** than Satellite while still offering competitive floor areas.
 
 ---
 
-### 📍 Insight 3 — Market Liquidity
+### Insight 3 — Market Liquidity
 
 > Bopal is the most liquid market with the highest listing volume — nearly **8× more active** than Khodiyar Nagar, indicating stronger resale and transaction potential.
 
 ---
 
-### 📍 Insight 4 — Luxury Housing Corridors
+### Insight 4 — Luxury Housing Corridors
 
 > SBR and Thaltej show strong dominance of larger BHK configurations, signalling a premium buyer segment concentrated in Ahmedabad’s western corridor.
 
 ---
 
-### 📍 Insight 5 — Best 3BHK Under ₹80L
+### Insight 5 — Best 3BHK Under ₹80L
 
 > SBR offers the best value for 3BHK flats under ₹80 lakh at:
 >
@@ -278,7 +278,7 @@ ORDER BY avg_price_sqft ASC;
 ## 🔗 [Ahmedabad Real Estate 2026 Dashboard](https://app.powerbi.com/links/G-WmxO8BbD?ctid=c30f7e5d-d78c-44b6-be17-02d4b3e5cd5c&pbi_source=linkShare)
 
 ---
-## 📸 Dashboard Screenshots
+## Dashboard Screenshots
 
 ### Page 1 — City Overview
 <img width="838" height="474" alt="Screenshot 2026-05-19 at 10 06 50" src="https://github.com/user-attachments/assets/5cd45512-2e78-4fab-ada3-9bfffa6ccd68" />
@@ -295,7 +295,7 @@ ORDER BY avg_price_sqft ASC;
 
 ---
 
-## 📂 Dataset
+## Dataset
 
 | Column | Description |
 |---|---|
@@ -312,7 +312,7 @@ ORDER BY avg_price_sqft ASC;
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
 **1. Clone the repo**
 ```bash
@@ -339,7 +339,7 @@ jupyter notebook ahmedabad_realestate.ipynb
 > directly and start from Cell 8 onwards.
 ---
 
-## 👤 Author
+## Author
 
 **Aryansinh Chauhan**
 Aspiring Data Analyst - Ahmedabad, Gujarat
