@@ -175,6 +175,8 @@ ORDER BY avg_price_sqft ASC;
 
 ## 📸 Dashboard Screenshots
 
+(🔗 [Microsoft BI Dashboard](https://app.powerbi.com/links/G-WmxO8BbD?ctid=c30f7e5d-d78c-44b6-be17-02d4b3e5cd5c&pbi_source=linkShare))
+
 ### Page 1 — City Overview
 <img width="838" height="474" alt="Screenshot 2026-05-19 at 10 06 50" src="https://github.com/user-attachments/assets/5cd45512-2e78-4fab-ada3-9bfffa6ccd68" />
 
@@ -239,7 +241,7 @@ jupyter notebook ahmedabad_realestate.ipynb
 **Aryansinh Chauhan**
 Aspiring Data Analyst - Ahmedabad, Gujarat
 📧 chauhan.aryansinh29@gmail.com
-🔗 [LinkedIn](🔗 [LinkedIn](https://www.linkedin.com/in/aryansinh-chauhan-653105283))
+🔗 (🔗 [LinkedIn](https://www.linkedin.com/in/aryansinh-chauhan-653105283))
 
 ---
 
