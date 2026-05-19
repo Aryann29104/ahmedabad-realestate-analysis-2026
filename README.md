@@ -176,7 +176,8 @@ ORDER BY avg_price_sqft ASC;
 ## 📸 Dashboard Screenshots
 
 ### Page 1 — City Overview
-<img width="840" height="475" alt="Screenshot 2026-05-19 at 09 36 21" src="https://github.com/user-attachments/assets/9a0b354a-ac59-4afe-9e88-35ca896e6b2b" />
+<img width="838" height="474" alt="Screenshot 2026-05-19 at 10 06 50" src="https://github.com/user-attachments/assets/5cd45512-2e78-4fab-ada3-9bfffa6ccd68" />
+
 
 ### Page 2 — Locality Deep Dive
 <img width="840" height="475" alt="Screenshot 2026-05-19 at 09 36 26" src="https://github.com/user-attachments/assets/5f07c746-6efc-4003-bdb2-719c656a90cf" />
