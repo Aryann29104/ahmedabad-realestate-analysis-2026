@@ -80,7 +80,9 @@ Power BI Dashboard (3 pages)
 
 ## 📊 SQL Analysis
 
-### Query 1 — Best Value Locality (Cheapest → Costliest)
+---
+
+# 🏙️ Query 1 — Best Value Locality (Cheapest → Costliest)
 
 ```sql
 SELECT locality,
@@ -90,24 +92,30 @@ GROUP BY locality
 ORDER BY avg_price_sqft ASC;
 ```
 
-**Result:**
+### 📌 Result
 
-| Rank | Locality | Avg ₹/sqft |
-|---|---|---|
-| 1 | Nikol | ₹4,758 |
-| 2 | Khodiyar Nagar | ₹4,912 |
-| 3 | Chandkheda | ₹4,986 |
-| 4 | Bopal | ₹5,694 |
-| 5 | SBR | ₹6,198 |
-| 6 | Science City | ₹6,661 |
-| 7 | Naranpura | ₹6,878 |
-| 8 | Prahlad Nagar | ₹7,851 |
-| 9 | Thaltej | ₹7,993 |
-| 10 | Satellite | ₹8,603 |
+| Rank | Locality       | Avg ₹/Sqft |
+| ---: | -------------- | ---------: |
+|    1 | Nikol          |     ₹4,758 |
+|    2 | Khodiyar Nagar |     ₹4,912 |
+|    3 | Chandkheda     |     ₹4,986 |
+|    4 | Bopal          |     ₹5,694 |
+|    5 | SBR            |     ₹6,198 |
+|    6 | Science City   |     ₹6,661 |
+|    7 | Naranpura      |     ₹6,878 |
+|    8 | Prahlad Nagar  |     ₹7,851 |
+|    9 | Thaltej        |     ₹7,993 |
+|   10 | Satellite      |     ₹8,603 |
+
+### 🔍 Insight
+
+* **Satellite** is the most premium locality in the dataset.
+* It is approximately **81% more expensive per sqft** than Nikol.
+* This highlights a major pricing divide between affordable and luxury housing markets in Ahmedabad.
 
 ---
 
-### Query 2 — Market Activity (Most to Least Listings)
+# 📈 Query 2 — Market Activity (Most → Least Listings)
 
 ```sql
 SELECT locality,
@@ -117,11 +125,36 @@ GROUP BY locality
 ORDER BY listing_count DESC;
 ```
 
-**Result:** Bopal leads with highest listing volume indicating strongest resale liquidity.
+### 📌 Result
+
+| Rank | Locality       | Listing Count |
+| ---: | -------------- | ------------: |
+|    1 | Bopal          |           734 |
+|    2 | Prahlad Nagar  |           720 |
+|    3 | Thaltej        |           679 |
+|    4 | SBR            |           674 |
+|    5 | Naranpura      |           650 |
+|    6 | Science City   |           624 |
+|    7 | Satellite      |           579 |
+|    8 | Chandkheda     |           509 |
+|    9 | Nikol          |           374 |
+|   10 | Khodiyar Nagar |            90 |
+
+### 🔍 Insight
+
+* **Bopal** is the most active and liquid real estate market.
+* With **734 listings**, it is:
+
+  * **8.2× more active** than Khodiyar Nagar.
+* High listing activity generally indicates:
+
+  * Better buyer-seller movement
+  * Stronger market demand
+  * Higher transaction potential
 
 ---
 
-### Query 3 — Dominant BHK Type per Locality
+# 🏠 Query 3 — Dominant BHK Type per Locality
 
 ```sql
 SELECT locality,
@@ -132,17 +165,40 @@ GROUP BY locality, bhk
 ORDER BY locality, count DESC;
 ```
 
-**Result:** 3BHK dominates 8 out of 10 localities. SBR and Thaltej are 4BHK dominant signalling a premium/luxury buyer profile in those corridors. While Nikol is the only 2BHK dominant locality indicating a first time/middle income market.
+### 📌 Result
+
+| Locality       | Dominant BHK | Listing Count |
+| -------------- | ------------ | ------------: |
+| Bopal          | 3BHK         |           430 |
+| Chandkheda     | 3BHK         |           240 |
+| Khodiyar Nagar | 3BHK         |            45 |
+| Naranpura      | 3BHK         |           475 |
+| Nikol          | 2BHK         |           165 |
+| Prahlad Nagar  | 3BHK         |           335 |
+| SBR            | 3BHK         |           290 |
+| Satellite      | 3BHK         |           265 |
+| Science City   | 3BHK         |           295 |
+| Thaltej        | 4BHK         |           374 |
+
+### 🔍 Insight
+
+* **Thaltej** is heavily dominated by **4BHK luxury housing**.
+* Most premium localities show a strong preference for **3BHK configurations**.
+* **Nikol** is the only locality dominated by **2BHK units**, suggesting:
+
+  * Higher affordability
+  * First-time homebuyers
+  * Middle-income buyer concentration
 
 ---
 
-### Query 4 — Best 3BHK Under ₹80 Lakh
+# 💰 Query 4 — Best 3BHK Flats Under ₹80 Lakh
 
 ```sql
 SELECT locality,
        ROUND(AVG(price_per_sqft), 0) AS avg_price_sqft,
        ROUND(AVG(area_sqft), 0)      AS avg_area_sqft,
-       COUNT(*)                       AS listings
+       COUNT(*)                      AS listings
 FROM ahmedabad_listings
 WHERE bhk = 3
 AND   price_lakh <= 80
@@ -150,26 +206,72 @@ GROUP BY locality
 ORDER BY avg_price_sqft ASC;
 ```
 
-**Result:** SBR offers the best value 3BHK under ₹80L at ₹4,332/sqft with average area of 1,267 sqft across 52 available listings.
+### 📌 Result
+
+| Rank | Locality       | Avg Price/Sqft (₹) | Avg Area (Sqft) | Avg Price (₹ Lakh) | Listings Available |
+| ---: | -------------- | -----------------: | --------------: | -----------------: | -----------------: |
+|    1 | SBR            |              4,332 |           1,267 |               75.0 |                 65 |
+|    2 | Chandkheda     |              4,340 |           1,221 |               71.8 |                115 |
+|    3 | Bopal          |              4,377 |           1,308 |               71.2 |                195 |
+|    4 | Satellite      |              4,438 |           1,600 |               71.0 |                  5 |
+|    5 | Khodiyar Nagar |              4,927 |           1,081 |               70.2 |                 15 |
+|    6 | Thaltej        |              5,080 |           1,275 |               72.7 |                 20 |
+|    7 | Science City   |              5,132 |           1,293 |               76.7 |                 10 |
+|    8 | Nikol          |              6,125 |           1,302 |               69.9 |                 54 |
+|    9 | Naranpura      |              7,276 |             878 |               77.8 |                 20 |
+
+### 🔍 Insight
+
+* **SBR (Sindhu Bhavan Road)** offers the best overall value for 3BHK flats under ₹80L:
+
+  * ₹4,332/sqft average price
+  * 1,267 sqft average area
+  * 65 available listings
+
+* **Bopal** also emerges as a strong balanced market due to:
+
+  * High inventory
+  * Competitive pricing
+  * Spacious average area
+
+* **Satellite** provides large carpet areas at lower prices but has very limited availability.
 
 ---
 
-## 💡 Key Insights
+# 💡 Key Insights
 
-**Insight 1 — Price Gap**
-> Satellite is **80.8% more expensive** per sqft than Nikol the widest price gap across all 10 localities analysed.
+### 📍 Insight 1 — Price Gap
 
-**Insight 2 — Best Value**
-> Nikol offers ₹4,758/sqft, 45% cheaper than Satellite (₹8,603/sqft) for equivalent floor area.
+> Satellite is **80.8% more expensive** per sqft than Nikol — the widest pricing gap across all 10 localities analysed.
 
-**Insight 3 — Market Liquidity**
-> Bopal is the most liquid market with the highest listing volume nearly 8x more active than Khodiyar Nagar, signalling stronger resale potential.
+---
 
-**Insight 4 — Luxury Corridors**
-> SBR and Thaltej are the only localities where 4BHK dominates indicating a premium buyer profile concentrated in the western corridor.
+### 📍 Insight 2 — Best Affordable Market
 
-**Insight 5 — Best Under ₹80L**
-> For a 3BHK under ₹80L, SBR offers the best value at ₹4,332/sqft with avg area of 1,267 sqft across 52 listings.
+> Nikol offers properties at **₹4,758/sqft**, making it approximately **45% cheaper** than Satellite while still offering competitive floor areas.
+
+---
+
+### 📍 Insight 3 — Market Liquidity
+
+> Bopal is the most liquid market with the highest listing volume — nearly **8× more active** than Khodiyar Nagar, indicating stronger resale and transaction potential.
+
+---
+
+### 📍 Insight 4 — Luxury Housing Corridors
+
+> SBR and Thaltej show strong dominance of larger BHK configurations, signalling a premium buyer segment concentrated in Ahmedabad’s western corridor.
+
+---
+
+### 📍 Insight 5 — Best 3BHK Under ₹80L
+
+> SBR offers the best value for 3BHK flats under ₹80 lakh at:
+>
+> * ₹4,332/sqft average price
+> * 1,267 sqft average area
+> * 65 available listings
+
 
 ---
 
